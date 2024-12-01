@@ -1,0 +1,37 @@
+@import "components/footer";
+@import "base/var";
+@import "base/normalize";
+@import "base/basic";
+
+@import "base/layout";
+@import "templates/article";
+
+@import "components/header";
+@import "components/zoom";
+
+@import "base/grap";
+@import "templates/map";
+@import "templates/term";
+@import "components/comment";
+:root {
+    --main-color: #1b578c;
+    --main-hover-color: #1b578c;
+}
+
+.js-contentFixed {
+    position: sticky;
+    top: 20px;
+    padding: 50px;
+}
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

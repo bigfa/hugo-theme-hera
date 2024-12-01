@@ -1,0 +1,127 @@
+.post {
+    &--headline {
+        font-size: 28px;
+        margin-top: 0;
+        line-height: 1.3;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .meta {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+        line-height: 1.6;
+    }
+
+    &--subline {
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.5);
+        line-height: 1.3;
+        margin-bottom: 5px;
+    }
+
+    header {
+        margin-bottom: 15px;
+    }
+}
+
+.addon {
+    display: flex;
+    align-items: flex-start;
+    .cover {
+        flex: 0 0 auto;
+        margin-left: 15px;
+        width: 96px;
+        img {
+            width: 96px;
+            height: 96px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+    }
+    .meta {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        p {
+            margin: 0;
+            margin-top: 5px;
+
+            font-size: 13px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+    // align-items: center;
+}
+
+.block--item {
+    padding: 25px 0;
+    position: relative;
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        right: 30%;
+        // height: 1px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.block--snippet {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.6);
+    flex: 1 1 auto;
+}
+
+.block--title {
+    margin: 0 0 10px;
+    line-height: 1.2;
+    font-size: 22px;
+    font-weight: 900;
+    &:hover {
+        color: var(--main-hover-color);
+    }
+}
+
+.nav-links {
+    padding: 20px 0;
+    .page-numbers {
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.6);
+        margin-right: 5px;
+        &.current,
+        &:hover {
+            color: var(--main-hover-color);
+        }
+    }
+}
+
+.postCat--item {
+    padding: 20px 0;
+    border-top: 1px solid var(--main-border-color);
+    border-bottom: 1px solid var(--main-border-color);
+    display: flex;
+    align-items: center;
+    .artile--category {
+        font-size: 18px;
+        font-weight: bold;
+        &:hover {
+            color: var(--main-hover-color);
+        }
+    }
+    .cover {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        flex: 0 0 auto;
+        border-radius: 4px;
+        margin-right: 15px;
+    }
+    p {
+        color: var(--text-gray-light);
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,32 @@
+<article class="block--item" data-id="{{ .File.UniqueID}}">
+    <h2 class="block--title">
+        <a href="{{ .Permalink }}">
+            {{ .Title }}
+        </a>
+    </h2>
+    <div class="addon">
+        <div class="block--snippet">
+            <div class="summary">{{ .Summary | plainify | truncate 60 }}</div>
+            <p><time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{ .Date
+                    | time.Format
+                    ":date_long"
+                    }}</time>
+                {{ if .Params.categories }}
+                <span class="dot"></span>
+                {{ range (.GetTerms "categories") }}
+                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                {{ end }}
+                {{ end }}
+                {{ if .Site.Params.post_view }}
+                <span class="dot"></span>
+                <span class="article--views"></span>
+                {{ end }}
+            </p>
+        </div>
+        {{ if .Content }}
+        {{ $urls := findRE "<img src=\"[^\"|\\\"]*\"" .Content }} {{ if $urls }} {{ $url :=index ($urls) 0 }} {{ $url
+            :=(strings.TrimPrefix "<img src=\"" $url) }}
+    {{ $url := strings.TrimRight " \"" $url }} <a href="{{ .Permalink }}" class="cover"><img src="{{ $url }}" /></a> {{
+        end }} {{ end }}
+    </div>
+</article>

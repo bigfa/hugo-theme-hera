@@ -1,0 +1,43 @@
+.layout {
+    // max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    // align-items: flex-start;
+    .is-singleColumn &,
+    .page-template-template-map & {
+        flex-direction: column;
+    }
+}
+
+.content {
+    padding: 50px 0 0 0;
+    flex: 1 1 auto;
+    min-height: 100vh;
+}
+
+.post--list {
+    max-width: var(--hera-column-width);
+    margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+    .layout {
+        flex-direction: column;
+    }
+}
+
+.layoutContainer {
+    max-width: var(--hera-column-width);
+    margin: 0 auto;
+}
+
+.articleContainer {
+    max-width: var(--hera-article-width);
+    margin: 0 auto;
+}
+
+.doubanContainer {
+    --hera-article-width: 850px;
+    max-width: var(--hera-article-width);
+    margin: 0 auto;
+}
