@@ -1,18 +1,17 @@
 {{ define "main" }}
 <div class="articleContainer">
-    <div class="layoutSingleColumn u-paddingTop50">
-        <h2 class="title">{{ .Title }}</h2>
-        <div class="tip">
-            <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{ .PublishDate }}</time>
-        </div>
-        <div class="content graph">
+    <article class="article">
+        <header class="article--header">
+            <h2 class="article--headline">{{ .Title }}</h2>
+            {{ if .Params.description }}
+            <div class="article--subline">
+                {{ .Params.description }}
+            </div>
+            {{end}}
+        </header>
+        <div class="article--body graph">
             {{ .Content }}
         </div>
-        <div class="tags u-paddingTop20">
-            {{ range (.GetTerms "tags") }}
-            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-            {{ end }}
-        </div>
-    </div>
+    </article>
 </div>
 {{ end }}

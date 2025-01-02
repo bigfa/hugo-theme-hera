@@ -1,13 +1,15 @@
 {{ define "main" }}
 <div class="post--list">
-    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-    {{ $paginator := .Paginate ($pages) }}
-    {{ range $paginator.Pages }}
-    {{ if eq .Type "memo" }}
-    {{ partial "memo.html" . }}
-    {{ else }}
-    {{ partial "post.html" . }}
-    {{ end }} {{ end }}
+    <div class="block--list">
+        {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+        {{ $paginator := .Paginate ($pages) }}
+        {{ range $paginator.Pages }}
+        {{ if eq .Type "memo" }}
+        {{ partial "memo.html" . }}
+        {{ else }}
+        {{ partial "post.html" . }}
+        {{ end }} {{ end }}
+    </div>
 </div>
 {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
 <div class="pagination">

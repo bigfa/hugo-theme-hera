@@ -22,9 +22,9 @@ new noteDate({
 
 class noteBase {
     constructor() {
-        this.initThemeSwitch();
+        // this.initThemeSwitch();
         this.initBack2Top();
-        this.initMenu();
+        // this.initMenu();
     }
 
     initMenu() {

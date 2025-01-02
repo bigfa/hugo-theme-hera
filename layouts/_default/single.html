@@ -1,26 +1,28 @@
 {{ define "main" }}
 <div class="articleContainer">
-    <div class="post" data-id="{{ .File.UniqueID}}">
-        <h2 class="post--headline">{{ .Title }}</h2>
-        {{ if .Params.description }}
-        <div class="article--subline">
-            {{ .Params.description }}
-        </div>
-        {{end}}
-        <div class="meta">
-            <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{
-                .Date.Format "2006-01-02 15:04:01" }}</time>
-            {{ if .Params.categories }}
-            <span class="dot"></span>
-            {{ range (.GetTerms "categories") }}
-            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-            {{ end }}
-            {{ end }}
-            {{ if .Site.Params.post_view }}
-            <span class="dot"></span>
-            <span class="article--views"></span>
-            {{ end }}
-        </div>
+    <div class="article" data-id="{{ .File.UniqueID}}">
+        <header class="article--header">
+            <h2 class="article--headline">{{ .Title }}</h2>
+            {{ if .Params.description }}
+            <div class="article--subline">
+                {{ .Params.description }}
+            </div>
+            {{end}}
+            <div class="article--meta">
+                <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{
+                    .Date.Format "2006-01-02 15:04:01" }}</time>
+                {{ if .Params.categories }}
+                <span class="sep"></span>
+                {{ range (.GetTerms "categories") }}
+                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                {{ end }}
+                {{ end }}
+                {{ if .Site.Params.post_view }}
+                <span class="sep"></span>
+                <span class="article--views"></span>
+                {{ end }}
+            </div>
+        </header>
         {{ if .IsTranslated }}
         <div class="translatedCard">
             <h4>{{ i18n "translations" }}</h4>
@@ -42,7 +44,7 @@
             {{ .TableOfContents }}
         </details>
         {{- end }}
-        <div class="content grap">
+        <div class="article--body grap">
             {{ .Content }}
         </div>
         {{ if .Site.Params.post_like }}
@@ -87,7 +89,7 @@
             </svg>
         </div>
         {{ end }}
-        {{ range (.GetTerms "categories") }}
+        <!-- {{ range (.GetTerms "categories") }}
         <div class="postCat--item">
             {{ if .Params.cover }}
             <img src="{{ .Params.cover}}" class="cover" />
@@ -99,7 +101,7 @@
                 <p>{{ .Params.description }}</p>
             </div>
         </div>
-        {{ end }}
+        {{ end }} -->
         {{ partial "related.html" . }}
         {{ if .Params.comments }}
         {{ partial "commentlist.html" . }}
