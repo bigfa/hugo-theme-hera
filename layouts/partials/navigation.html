@@ -1,7 +1,7 @@
-<div class="widget--links ">
-	<div class="widget--link"><a href="/" title="My Work">My Work</a></div>
-	<div class="widget--link"><a href="/categories" title="My Work">Categories</a></div>
-	<div class="widget--link"><a href="/archive" title="My Work">Archive</a></div>
-	<div class="widget--link"><a href="/" title="My Work">Lens</a></div>
-	<div class="widget--link"><a href="/map" title="My Work">Travel Footprint</a></div>
-</div>
+<ul class="widget--links ">
+	{{ range $.Site.Menus.main }}
+	{{ if not .HasChildren }}
+	<li class="menu-item"><a href="{{ .URL }}">{{ .Name }}</a></li>
+	{{ end }}
+	{{ end }}
+</ul>

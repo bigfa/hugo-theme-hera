@@ -13,6 +13,13 @@
         {{ partial "post.html" . }}
         {{ end }}
     </div>
-
+    {{ $paginator := .Paginate (where .Pages "Type" "post") }}
+    <nav class="navigation ">
+        <div class="nav-links">
+            {{ range $paginator.Pagers }}
+            <a class="page-numbers{{ if eq . $paginator }} current{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
+            {{ end }}
+        </div>
+    </nav>
 </div>
 {{ end }}

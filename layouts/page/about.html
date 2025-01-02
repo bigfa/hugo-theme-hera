@@ -1,7 +1,9 @@
 {{ define "main" }}
 
-<div class="layoutSingleColumn u-paddingTop50">
-    <h2 class="page--headline">{{ .Title }}</h2>
+<div class="articleContainer">
+    <header class="article--header">
+        <h2 class="article--headline">{{ .Title }}</h2>
+    </header>
     {{ if .IsTranslated }}
     <div class="translatedCard">
         <h4>{{ i18n "translations" }}</h4>
@@ -15,7 +17,7 @@
         </ul>
     </div>
     {{ end }}
-    <div class="graph u-marginBottom30">
+    <div class="grap article--body">
         {{ .Content }}
     </div>
 </div>

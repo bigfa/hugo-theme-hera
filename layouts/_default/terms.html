@@ -1,8 +1,8 @@
 {{ define "main" }}
-<header class="tag--header post--list">
-    <h1 class="page--headline">{{.Title}}</h1>
-</header>
-<section class="post--list">
+<div class="articleContainer">
+    <header class="article--header">
+        <h2 class="article--headline">{{ .Title }}</h2>
+    </header>
     <div class="archive--tagList">
         {{ $data := .Data }}
         {{ range $key, $value := .Data.Terms.ByCount }}
@@ -13,5 +13,5 @@
         </span>
         {{ end }}
     </div>
-</section>
+</div>
 {{ end }}

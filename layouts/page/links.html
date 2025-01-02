@@ -1,20 +1,24 @@
 {{ define "main" }}
 
-<div class="layoutSingleColumn u-paddingTop50">
-    <h2 class="page--headline">{{ .Title }}</h2>
-    <div class="template--linksWrap">
-        <ul class="link-items">
-            {{ range .Params.links }}
-            <li class="link-item">
-                <a class="link-item-inner effect-apollo" href="{{ .link }}" title="Just a blog" target="_blank">
-                    <span class="sitename"><strong>{{ .title }}</strong>{{ .description }}</span>
-                </a>
-            </li>
-            {{ end }}
-        </ul>
-    </div>
-    <div class="graph u-marginBottom30">
-        {{ .Content }}
+<div class="articleContainer">
+    <div class="article" data-id="{{ .File.UniqueID}}">
+        <header class="article--header">
+            <h2 class="article--headline">{{ .Title }}</h2>
+        </header>
+        <div class="template--linksWrap">
+            <ul class="link-items">
+                {{ range .Params.links }}
+                <li class="link-item">
+                    <a class="link-item-inner effect-apollo" href="{{ .link }}" title="Just a blog" target="_blank">
+                        <span class="sitename"><strong>{{ .title }}</strong>{{ .description }}</span>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        <div class="grap u-marginBottom30">
+            {{ .Content }}
+        </div>
     </div>
 </div>
 

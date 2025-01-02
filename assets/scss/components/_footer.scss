@@ -102,20 +102,6 @@
         }
     }
 
-    .copyright {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        svg {
-            fill: var(--hera-text-light);
-            margin-left: 8px;
-            cursor: pointer;
-            &:hover {
-                fill: var(--hera-hover-color);
-            }
-        }
-    }
-
     nav {
         ul {
             display: flex;
