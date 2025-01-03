@@ -151,8 +151,8 @@ class noteBase {
 new noteBase();
 
 new farallonActions({
-    singleSelector: ".post--single",
-    articleSelector: ".articleItem",
+    singleSelector: ".article",
+    articleSelector: ".block--item",
     text: window.viewText,
     actionDomain: window.actionDomain,
 });
