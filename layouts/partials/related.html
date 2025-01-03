@@ -1,4 +1,4 @@
-{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ $related := .Site.RegularPages.Related . | first 4 }}
 {{ with $related }}
 <div class="related--content">
     <h3 class="related--posts__title">{{ i18n "article.relatedContent" }}</h3>
@@ -10,17 +10,19 @@
                     {{ if .Content }}
                     {{ $urls := findRE "<img src=\"[^\"|\\\"]*\"" .Content }} {{ if $urls }} {{ $url :=index ($urls) 0
                         }} {{ $url :=(strings.TrimPrefix "<img src=\"" $url) }}
-    {{ $url := strings.TrimRight " \"" $url }} <img src="{{ $url }}" class="cover" /> {{
-                    end }} {{ end }}
+    {{ $url := strings.TrimRight " \"" $url }} <img src="{{ $url }}" class="cover" />
+                    {{ else }}
+                    <img src="{{ .Site.Params.defaultCover }}" class="cover" />
+                    {{ end }}
+                    {{ end }}
                 </div>
                 <div class="post--single__related__item__title">
                     {{ .Title }}</div>
                 <div class="meta">
-                    <time class="humane--time"><time datetime='{{.Date.Format "2006-01-02 15:04:01" }}'
-                            class="humane--time">{{ .Date
-                            | time.Format
-                            ":date_long"
-                            }}</time></time>
+                    <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{ .Date
+                        | time.Format
+                        ":date_long"
+                        }}</time>
                 </div>
             </a>
         </div>

@@ -92,6 +92,10 @@
             border-radius: 10px;
             display: flex;
             flex-direction: column;
+            &__img {
+                display: flex;
+                align-items: center;
+            }
             .cover {
                 border-radius: 10px 10px 0 0;
                 aspect-ratio: 2/1;

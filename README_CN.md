@@ -1,6 +1,8 @@
 # Hugo 主题 Hera
 
-a single column hugo theme with cloudflare woker support
+![](https://static.fatesinger.com/2024/12/2u80bhyxkmru4o9j.png)
+
+优雅主题
 
 ## 使用方法
 
@@ -11,6 +13,12 @@ echo "theme = 'hera'" >> hugo.toml
 ```
 
 ## 更新日志
+
+### 0.0.2
+
+-   修复首页链接错误
+-   增加状态
+-   增加默认封面
 
 ### 0.0.1
 

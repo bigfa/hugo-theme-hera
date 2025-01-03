@@ -1,6 +1,6 @@
 # Hugo Theme Hera
 
-![](https://static.fatesinger.com/2024/11/ypcms5j5idcpaihf.jpg)
+![](https://static.fatesinger.com/2024/12/2u80bhyxkmru4o9j.png)
 
 ## How to use
 
@@ -11,6 +11,12 @@ echo "theme = 'hera'" >> config.toml
 ```
 
 ## Release Note
+
+### 0.0.2
+
+-   fixed home url error
+-   add memo
+-   add default cover
 
 ### 0.0.1
 
