@@ -30,7 +30,7 @@
 
     &--item {
         padding: 15px;
-        background-color: #fafafa;
+        background-color: var(--hera-background-gray-lightest);
         border-radius: 10px;
         a {
             &:hover {
@@ -55,4 +55,17 @@
             padding: 10px;
         }
     }
+}
+
+.archive--tagList {
+    display: flex;
+    flex-wrap: wrap;
+}
+.archive--tagItem {
+    margin: 10px;
+    background-color: var(--hera-background-gray-lightest);
+    padding: 3px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--hera-text-gray-light);
 }

@@ -170,3 +170,42 @@
         }
     }
 }
+
+.fixed--theme {
+    position: fixed;
+    left: 10px;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    box-shadow: 0 0 0 1px var(--hera-border-color);
+    background-color: var(--hera-background-white);
+    border-radius: 999rem;
+    width: max-content;
+    padding: 3px;
+    span {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--hera-text-gray-lightest);
+
+        &:hover {
+            color: var(--hera-text-color);
+        }
+
+        &.is-active {
+            color: var(--hera-text-color);
+            background-color: var(--hera-background-gray);
+        }
+
+        margin-bottom: 5px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
