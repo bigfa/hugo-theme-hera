@@ -12,6 +12,10 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.0.4
+
+-   fixed some ui error
+
 ### 0.0.3
 
 -   add dark mode support

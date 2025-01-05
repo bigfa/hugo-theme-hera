@@ -56,13 +56,30 @@
         }
     }
 
+    code {
+        background-color: var(--hera-background-gray);
+        margin-left: 4px;
+        margin-right: 4px;
+        border-radius: 4px;
+        font-size: 75%;
+        padding: 2px 4px;
+        word-break: break-word;
+        color: var(--hera-text-light);
+    }
+
     pre {
         word-break: break-all;
         white-space: break-spaces;
         background-color: var(--hera-background-gray);
-        padding: 10px;
+        padding: 15px;
         border-radius: 5px;
         font-size: 14px;
+        code {
+            background-color: rgba(0, 0, 0, 0);
+            font-size: 100%;
+            margin: 0;
+            padding: 0;
+        }
     }
 
     &--mixtapeEmbed {
@@ -76,8 +93,8 @@
         }
 
         margin-bottom: 25px;
-        border: 1px solid var(--hera-border-color);
-        border-radius: 4px;
+        background-color: var(--hera-background-gray);
+        border-radius: 5px;
         display: flex;
 
         .mixtapeImage {
@@ -144,13 +161,13 @@
         transition: 0.2s;
         color: var(--main-color);
 
-        &[href*='jpeg'],
-        &[href*='JPEG'],
-        &[href*='jpg'],
-        &[href*='png'],
-        &[href*='PNG'],
-        &[href*='JPG'],
-        &[href*='gif'] {
+        &[href*="jpeg"],
+        &[href*="JPEG"],
+        &[href*="jpg"],
+        &[href*="png"],
+        &[href*="PNG"],
+        &[href*="JPG"],
+        &[href*="gif"] {
             box-shadow: none;
             &:hover {
                 box-shadow: none;
@@ -178,7 +195,7 @@
         }
 
         &:before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0.5em;
             bottom: -2px;
@@ -215,7 +232,7 @@
         margin-bottom: 15px;
 
         &:before {
-            content: '...';
+            content: "...";
             letter-spacing: 0.6em;
             text-indent: 0.6em;
         }
@@ -236,7 +253,7 @@
             margin-bottom: 5px;
 
             &:before {
-                content: '•';
+                content: "•";
                 box-sizing: border-box;
                 font-size: 18px;
                 margin-left: -35px;

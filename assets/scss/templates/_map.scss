@@ -262,8 +262,8 @@
 
 .doulist-item {
     margin: 30px 0;
-    color: #666;
-    border: 1px solid #eee;
+    color: var(--hera-text-gray);
+    border: 1px solid var(--hera-border-color);
     border-radius: 4px;
     &:hover {
         box-shadow: 0 3px 12px var(--hera-border-color-light);
