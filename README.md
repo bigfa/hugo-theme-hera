@@ -12,6 +12,10 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.0.5
+
+-   fixed mobile menu error
+
 ### 0.0.4
 
 -   fixed some ui error
