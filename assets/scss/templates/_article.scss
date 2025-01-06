@@ -199,7 +199,14 @@
     border: 0;
     background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
-
+    display: flex;
+    align-items: center;
+    .count {
+        font-size: 14px;
+        margin-left: 3px;
+        font-weight: bold;
+        color: var(--farallon-text-gray);
+    }
     &.is-active {
         svg {
             fill: var(--hera-main-color);

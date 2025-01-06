@@ -17,9 +17,15 @@
                     | time.Format
                     ":date_long"
                     }}</time>
+                {{ if .GetTerms "categories"}}
                 <span class="sep"></span>
                 {{ range (.GetTerms "categories") }}
                 <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                {{ end }}
+                {{ end }}
+                {{ if .Site.Params.post_view }}
+                <span class="sep"></span>
+                <span class="article--views"></span>
                 {{ end }}
                 <a datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="status--link" href="{{ .Permalink }}"
                     itemprop="datePublished"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"
