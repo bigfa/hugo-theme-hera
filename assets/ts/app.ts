@@ -93,7 +93,9 @@ class noteBase {
 </span>
 </div>`;
 
-        document.querySelector("body")!.insertAdjacentHTML("beforeend", html);
+        document
+            .querySelector(".site--footer")!
+            .insertAdjacentHTML("beforeend", html);
         document.querySelectorAll(".fixed--theme span").forEach((item) => {
             item.addEventListener("click", () => {
                 if (item.classList.contains("is-active")) return;
