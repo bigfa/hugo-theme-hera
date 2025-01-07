@@ -47,6 +47,8 @@
     margin: 0 auto;
     width: 92%;
     padding-top: 15px;
+    min-height: calc(100vh - 50px);
+    box-sizing: border-box;
 }
 
 @media (max-width: 1280px) {

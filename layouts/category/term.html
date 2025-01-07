@@ -8,9 +8,15 @@
             {{ end }}
         </dic>
     </header>
+    {{- $pages := union .RegularPages .Sections }}
+    {{- $paginator := .Paginate $pages }}
     <div class="block--list">
-        {{ range .Data.Pages }}
+        {{- range $index, $page := $paginator.Pages }}
+        {{ if eq .Type "memo" }}
+        {{ partial "memo.html" . }}
+        {{ else }}
         {{ partial "post.html" . }}
+        {{ end }}
         {{ end }}
     </div>
     {{ $paginator := .Paginate (where .Pages "Type" "post") }}

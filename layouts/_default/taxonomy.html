@@ -9,12 +9,13 @@
             {{ end }}
         </div>
     </header>
+    {{- $pages := union .RegularPages .Sections }}
+    {{- $paginator := .Paginate $pages }}
     <div class="block--list">
-        {{ range .Data.Pages }}
+        {{- range $index, $page := $paginator.Pages }}
         {{ partial "post.html" . }}
         {{ end }}
     </div>
-    {{ $paginator := .Paginate (where .Pages "Type" "post") }}
     <nav class="navigation ">
         <div class="nav-links">
             {{ range $paginator.Pagers }}

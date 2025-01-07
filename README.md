@@ -12,6 +12,12 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.0.8
+
+-   add search
+-   add paginator
+-   add card category
+
 ### 0.0.7
 
 -   fixed comment submit error
