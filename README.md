@@ -12,6 +12,10 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.0.7
+
+-   fixed comment submit error
+
 ### 0.0.6
 
 -   fixed some ui error

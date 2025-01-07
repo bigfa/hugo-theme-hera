@@ -53,10 +53,9 @@ export class farallonComment extends farallonHelper {
                                         <img src="${item.avatar}" class="avatar"  width=42 height=42 />
                                     </div>
                                     <div class="comment--meta">
-                                        <div class="comment--author" itemprop="author">${item.comment_author_name}<span class="dot"></span>
+                                        <div class="comment--author" itemprop="author">${item.comment_author_name}${replyHtml}
                                             <div class="comment--time" itemprop="datePublished" datetime="${item.comment_date}">${item.comment_date}</div>
                                             </div>
-                                            ${replyHtml}
                                     </div>
                                 </div>
                                 <div class="comment-content" itemprop="description">
@@ -171,7 +170,7 @@ export class farallonComment extends farallonHelper {
                     );
                     formDataObj["post_id"] = this.post_id;
                     this.loading = true;
-                    fetch(this.actionDomain + "comment", {
+                    fetch(this.actionDomain + "comment/insert", {
                         method: "POST",
                         body: JSON.stringify(formDataObj),
                         headers: {
