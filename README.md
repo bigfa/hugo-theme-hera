@@ -12,6 +12,10 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.0.9
+
+-   fixed some ui error
+
 ### 0.0.8
 
 -   add search
