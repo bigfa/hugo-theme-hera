@@ -43,7 +43,7 @@
                     </a>
                     <div class="site--info__content">
                         <h1 class="site--title">{{ $.Site.Title }}</h1>
-                        <div class="site--description"></div>
+                        <div class="site--description">{{ .Site.Params.SiteDescription }}</div>
                     </div>
                 </div>
                 {{ partial "navigation.html" . }}
@@ -53,8 +53,9 @@
             </div>
         </div>
         <div class="content">
+            {{ if $.Site.Params.search }}
             <div class="search--area">
-                <form role="search" method="get" class="search-form" action="/search">
+                <form role="search" method="get" class="search-form" action="{{ site.Home.Permalink }}search">
                     <label class="search-label">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path fill="currentColor" fill-rule="evenodd"
@@ -67,6 +68,7 @@
                     <input type="submit" class="search-submit" value="Search">
                 </form>
             </div>
+            {{ end }}
             {{ block "main" . }}{{ end }}
             {{ partial "footer.html" . }}
         </div>
