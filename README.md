@@ -12,6 +12,10 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.1.0
+
+-   Compatible with v0.146.0
+
 ### 0.0.10
 
 -   fixed search error
