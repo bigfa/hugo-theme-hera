@@ -1,43 +1,43 @@
 @font-face {
-    font-family: 'Open Sans';
-    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
-        url('../fonts/OpenSans-Regular.woff') format('woff');
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-Regular.woff2") format("woff2"),
+        url("../fonts/OpenSans-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Open Sans';
-    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
-        url('../fonts/OpenSans-Bold.woff') format('woff');
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-Bold.woff2") format("woff2"),
+        url("../fonts/OpenSans-Bold.woff") format("woff");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Open Sans';
-    src: url('../fonts/OpenSans-Light.woff2') format('woff2'),
-        url('../fonts/OpenSans-Light.woff') format('woff');
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-Light.woff2") format("woff2"),
+        url("../fonts/OpenSans-Light.woff") format("woff");
     font-weight: 200;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Open Sans';
-    src: url('../fonts/OpenSans-Medium.woff2') format('woff2'),
-        url('../fonts/OpenSans-Medium.woff') format('woff');
+    font-family: "Open Sans";
+    src: url("../fonts/OpenSans-Medium.woff2") format("woff2"),
+        url("../fonts/OpenSans-Medium.woff") format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'mrs_saint_delafieldregular';
-    src: url('../fonts/mrssaintdelafield-regular-webfont.woff2') format('woff2'),
-        url('../fonts/mrssaintdelafield-regular-webfont.woff') format('woff');
+    font-family: "mrs_saint_delafieldregular";
+    src: url("../fonts/mrssaintdelafield-regular-webfont.woff2") format("woff2"),
+        url("../fonts/mrssaintdelafield-regular-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -51,17 +51,17 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    -moz-font-feature-settings: 'liga' on;
+    -moz-font-feature-settings: "liga" on;
     color: var(--hera-text-color);
-    line-height: 1.8;
+    line-height: var(--hera-line-height, 1.8);
     word-break: break-all;
     background-color: var(--hera-background-gray-lightest);
 
     font: {
         weight: 400;
         style: normal;
-        family: 'Open Sans', PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti,
-            WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+        family: "Open Sans", PingFang SC, Hiragino Sans GB, Microsoft YaHei,
+            STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
         size: var(--hera-basic-font-size);
     }
 }
@@ -104,8 +104,8 @@ textarea {
     appearance: none;
     outline: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    font-family: 'Open Sans', PingFang SC, Hiragino Sans GB, Microsoft YaHei, STHeiti,
-        WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", PingFang SC, Hiragino Sans GB, Microsoft YaHei,
+        STHeiti, WenQuanYi Micro Hei, Helvetica, Arial, sans-serif;
     font-size: var(--hera-basic-font-size);
     color: var(--hera-text-color);
 }
@@ -126,6 +126,11 @@ textarea {
     }
 }
 
+.u-flex {
+    display: flex;
+    align-items: center;
+}
+
 .screen-reader-text {
     position: absolute;
     width: 1px;
@@ -144,9 +149,9 @@ textarea {
 
 .sep {
     &::before {
-        content: '·';
-        margin-left: 5px;
-        margin-right: 5px;
+        content: "·";
+        margin-left: 6px;
+        margin-right: 6px;
     }
 }
 

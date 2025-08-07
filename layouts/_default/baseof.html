@@ -38,7 +38,8 @@
             </div>
             <div class="js-contentFixed">
                 <div class="site--info">
-                    <a href="{{ site.Home.Permalink }}">{{ $logo := resources.Get "images/avatar.jpeg" }}
+                    <a href="{{ site.Home.Permalink }}" class="avatar--wrapper">{{ $logo := resources.Get
+                        "images/avatar.jpeg" }}
                         <img src="{{ $logo.RelPermalink }}" class="avatar" />
                     </a>
                     <div class="site--info__content">
@@ -47,7 +48,7 @@
                     </div>
                 </div>
                 {{ partial "navigation.html" . }}
-                <div class="site--footer__sns">
+                <div class="site--nav__sns">
                     {{ partial "sns.html" . }}
                 </div>
             </div>

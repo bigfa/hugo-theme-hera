@@ -1,8 +1,13 @@
 {{ define "main" }}
 
 <div class="articleContainer">
-    <header class="article--header">
-        <h2 class="article--headline">{{ .Title }}</h2>
+    <header class="hArticle--header">
+        <h2 class="hArticle--headline">{{ .Title }}</h2>
+        {{ if .Params.description }}
+        <div class="hArticle--subline">
+            {{ .Params.description }}
+        </div>
+        {{end}}
     </header>
     <div class="db--container">
     </div>

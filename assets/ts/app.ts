@@ -3,7 +3,6 @@ import farallonActions from "./action.ts";
 import Douban from "./db.ts";
 import { farallonComment } from "./comment.ts";
 import imgZoom from "./zoom.ts";
-
 declare global {
     interface Window {
         actionDomain: string;
@@ -59,7 +58,7 @@ class noteBase {
         const theme = localStorage.getItem("theme")
             ? localStorage.getItem("theme")
             : "auto";
-        const html = `<div class="fixed--theme">
+        const html = `<div class="hThemeSwitcher">
 <span class="${theme == "dark" ? "is-active" : ""}" data-action-value="dark">
 <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
     stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"
@@ -94,13 +93,13 @@ class noteBase {
 </div>`;
 
         document
-            .querySelector(".site--footer")!
+            .querySelector(".hFooter")!
             .insertAdjacentHTML("beforeend", html);
-        document.querySelectorAll(".fixed--theme span").forEach((item) => {
+        document.querySelectorAll(".hThemeSwitcher span").forEach((item) => {
             item.addEventListener("click", () => {
                 if (item.classList.contains("is-active")) return;
                 document
-                    .querySelectorAll(".fixed--theme span")
+                    .querySelectorAll(".hThemeSwitcher span")
                     .forEach((item) => {
                         item.classList.remove("is-active");
                     });
@@ -132,9 +131,9 @@ class noteBase {
     }
 
     initBack2Top() {
-        if (document.querySelector(".backToTop")) {
+        if (document.querySelector(".hBackTop")) {
             const backToTop = document.querySelector(
-                ".backToTop"
+                ".hBackTop"
             ) as HTMLElement;
             window.addEventListener("scroll", () => {
                 const t = window.scrollY || document.documentElement.scrollTop;
@@ -153,8 +152,8 @@ class noteBase {
 new noteBase();
 
 new farallonActions({
-    singleSelector: ".article",
-    articleSelector: ".block--item",
+    singleSelector: ".hArticle",
+    articleSelector: ".hBlock--item",
     text: window.viewText,
     actionDomain: window.actionDomain,
 });

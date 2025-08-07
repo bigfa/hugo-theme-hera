@@ -6,9 +6,6 @@
     --hera-background-gray: #f5f5f5;
     --hera-background-gray-lightest: #fafafa;
     --hera-warning-color: rgb(201, 74, 74);
-    --hera-fade: linear-gradient(0deg, #c0a294 0%, #c0a294 100%),
-        linear-gradient(0deg, #a69a90 0%, #a69a90 100%),
-        linear-gradient(0deg, #efe9e1 0%, #efe9e1 100%), #f5f5f5;
 
     --hera-column-width: 742px;
     --hera-article-width: 828px;
@@ -24,7 +21,7 @@
     --hera-border-color-light: rgba(0, 0, 0, 0.05);
 
     --hera-background-color-white: #fff;
-
+    --hera-background-opacity: 1;
     --hera-article-hero-font-size: 2rem;
 
     --hera-border-radius: 999rem;
@@ -33,12 +30,13 @@
     --hera-thumbnail-height: 96px;
 
     --hera-font-size-smallest: 12px;
+    --hera-text-size-small: 14px;
 }
 
 @media (prefers-color-scheme: dark) {
     .auto {
-        --hera-main-color: rgba(253, 186, 116, 1);
-        --hera-hover-color: rgba(255, 237, 213, 1);
+        // --hera-main-color: rgba(253, 186, 116, 1);
+        // --hera-hover-color: rgba(255, 237, 213, 1);
         --hera-text-color: #a1a1aa;
         --hera-text-light: rgba(161, 161, 170, 1);
         --hera-text-gray: rgba(113, 113, 122, 1);
@@ -50,12 +48,9 @@
             30,
             30,
             30,
-            var(--farallon-background-opacity)
+            var(--hera-background-opacity)
         );
         --hera-background-gray-lightest: #121212;
-
-        --farallon-griedent-start: #007cf0;
-        --farallon-griedent-end: #00dfd8;
 
         --hera-border-color: rgba(63, 63, 70, 0.6);
         --hera-border-color-light: rgba(63, 63, 70, 0.4);
@@ -65,34 +60,6 @@
             &:hover {
                 background-color: rgba(82, 82, 91, 1);
             }
-        }
-
-        .post--single__title,
-        .post--item .post--title {
-            color: rgba(244, 244, 245, 1);
-        }
-
-        .main {
-            &::after {
-                display: none;
-            }
-            box-shadow: hsla(240, 5%, 84%, 0.2) 0 0 0 1px;
-        }
-
-        .archive--list .archive--item {
-            &:hover {
-                background: linear-gradient(180deg, #1e1e1e, #121212);
-            }
-        }
-
-        .graph blockquote,
-        .graph ol li::before {
-            background: linear-gradient(180deg, #1e1e1e, #121212);
-        }
-
-        .nav-links .page-numbers.current:after,
-        .nav-links .post-page-numbers.current:after {
-            background-image: none;
         }
 
         .doulist-item {
@@ -110,8 +77,6 @@
 }
 
 .dark {
-    --hera-main-color: rgba(253, 186, 116, 1);
-    --hera-hover-color: rgba(255, 237, 213, 1);
     --hera-text-color: #a1a1aa;
     --hera-text-light: rgba(161, 161, 170, 1);
     --hera-text-gray: rgba(113, 113, 122, 1);
@@ -123,12 +88,9 @@
         30,
         30,
         30,
-        var(--farallon-background-opacity)
+        var(--hera-background-opacity)
     );
     --hera-background-gray-lightest: #121212;
-
-    --farallon-griedent-start: #007cf0;
-    --farallon-griedent-end: #00dfd8;
 
     --hera-border-color: rgba(63, 63, 70, 0.6);
     --hera-border-color-light: rgba(63, 63, 70, 0.4);
@@ -142,47 +104,6 @@
         &:hover {
             background-color: rgba(82, 82, 91, 1);
         }
-    }
-
-    .tag--list {
-        a {
-            background-color: rgba(39, 39, 42, 1);
-            color: #71717a;
-            --tw-ring-shadow: 0 0 0 calc(1px + 0px) hsla(0, 0%, 100%, 0.1);
-            box-shadow: 0 0 #0000, var(--tw-ring-shadow),
-                var(--tw-shadow, 0 0 #0000);
-            &:hover {
-                --tw-ring-shadow: 0 0 0 calc(1px + 0px) hsla(0, 0%, 100%, 0.2);
-            }
-        }
-    }
-
-    .post--single__title,
-    .post--item .post--title {
-        color: rgba(244, 244, 245, 1);
-    }
-
-    .main {
-        &::after {
-            display: none;
-        }
-        box-shadow: hsla(240, 5%, 84%, 0.2) 0 0 0 1px;
-    }
-
-    .archive--list .archive--item {
-        &:hover {
-            background: linear-gradient(180deg, #1e1e1e, #121212);
-        }
-    }
-
-    .graph blockquote,
-    .graph ol li::before {
-        background: linear-gradient(180deg, #1e1e1e, #121212);
-    }
-
-    .nav-links .page-numbers.current:after,
-    .nav-links .post-page-numbers.current:after {
-        background-image: none;
     }
 
     .comment-form {

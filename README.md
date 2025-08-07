@@ -12,6 +12,11 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.2.0
+
+-   refactoring scss files
+-   fixed search result render error
+
 ### 0.1.0
 
 -   Compatible with v0.146.0

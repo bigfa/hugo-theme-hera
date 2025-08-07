@@ -1,15 +1,15 @@
 {{ define "main" }}
 <div class="articleContainer">
-    <article class="article">
-        <header class="article--header">
-            <h2 class="article--headline">{{ .Title }}</h2>
+    <article class="hArticle">
+        <header class="hArticle--header">
+            <h2 class="hArticle--headline">{{ .Title }}</h2>
             {{ if .Params.description }}
-            <div class="article--subline">
+            <div class="hArticle--subline">
                 {{ .Params.description }}
             </div>
             {{end}}
         </header>
-        <div class="article--body graph">
+        <div class="hArticle--content hGraph">
             {{ .Content }}
         </div>
     </article>

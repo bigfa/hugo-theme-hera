@@ -1,11 +1,11 @@
 {{ define "main" }}
 
 <div class="post--list">
-    <header class="term--header">
-        <div class="term--header__content">
-            <h1 class="post-title">{{.Title}}</h1>
+    <header class="hTerm--header">
+        <div class="hTerm--content">
+            <h1 class="hTerm--title">{{.Title}}</h1>
             {{ if .Params.description }}
-            <div class="taxonomy--description">{{ .Params.description }}</div>
+            <div class="hTerm--description">{{ .Params.description }}</div>
             {{ end }}
         </div>
     </header>

@@ -1,12 +1,12 @@
 {{ define "main" }}
 <div class="post--list">
-    <header class="term--header">
-        <dic class="term--header__content">
-            <h1 class="term--title">{{.Title}}</h1>
+    <header class="hTerm--header">
+        <div class="hTerm--content">
+            <h1 class="hTerm--title">{{.Title}}</h1>
             {{ if .Params.description }}
-            <div class="term--description">{{ .Params.description }}</div>
+            <div class="hTerm--description">{{ .Params.description }}</div>
             {{ end }}
-        </dic>
+        </div>
     </header>
     {{- $pages := union .RegularPages .Sections }}
     {{- $paginator := .Paginate $pages }}

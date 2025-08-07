@@ -204,7 +204,7 @@ export class farallonComment extends farallonHelper {
                                     document.getElementById(
                                         "comment_parent"
                                     ) as HTMLInputElement
-                                ).value = "0"),
+                                ).value = ""),
                                 n && // @ts-ignore
                                     i && // @ts-ignore
                                     n.parentNode &&

@@ -15,7 +15,11 @@
                         {{ .Title }}
                     </a>
                 </div>
-                <div class="archive--meta">{{ .PublishDate.Format "Jan 02" }}</div>
+                <div class="archive--meta">
+                    {{ .PublishDate.Format "Jan 02" }}
+                    <span class="sep"></span>
+                    {{ printf "%d 分钟阅读" .ReadingTime }}
+                </div>
             </li>
             {{ end }}
         </ul>

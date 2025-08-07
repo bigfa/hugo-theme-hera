@@ -2,10 +2,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.1.0/themes/reset-min.css"
     integrity="sha256-2AeJLzExpZvqLUxMfcs+4DWcMwNfpnjUeAAvEtPr0wU=" crossorigin="anonymous">
 <div class="articleContainer">
-    <div class="site--main">
-        <div id="hits" class="block--list"></div>
-        <div id="pagination"></div>
-    </div>
+    <div id="hits" class="hBlock--list"></div>
+    <div id="pagination"></div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.20.0/dist/algoliasearch-lite.umd.js"
     integrity="sha256-DABVk+hYj0mdUzo+7ViJC6cwLahQIejFvC+my2M/wfM=" crossorigin="anonymous"></script>
@@ -47,24 +45,22 @@
                     const lngString = '{{ .Site.Language }}';
                     const uri = hit.uri.replace("/" + lngString + "/", "/");
                     const cover = hit.cover ? html`<img src="${hit.cover}" class="cover" itemprop="image" />` : '';
-                    return html`<article class="block--item" itemtype="http://schema.org/Article" itemscope="itemscope">
-                <h2 class="block--title">
-                    <a href="${uri}">${components.Highlight({ attribute: 'title', hit })}</a>
-                </h2>
-          <div class="block--addon">
-            <div class="meta">
-                <div class="block--snippet">
-          <div class="summary">${hit.description}</div>
-          <div class="block--meta">
-                    ${date}
-                    </div>
-                    </div>
-                    </div>
-                    <a href="${uri}" class="block--cover"> ${cover}</a>
-                    </div>
-                    
-                    </article>
-      `;
+                    return html`<article class="hBlock--item" itemtype="http://schema.org/Article" itemscope="itemscope">
+                                <h2 class="hBlock--title">
+                                    <a href="${uri}">${components.Highlight({ attribute: 'title', hit })}</a>
+                                </h2>
+                                <div class="hBlock--addon">
+                                    <div class="hBlock--content">
+                                        <div class="hBlock--snippet">
+                                            ${hit.description}
+                                        </div>
+                                        <div class="hBlock--meta">
+                                            ${date}
+                                        </div>
+                                    </div>
+                                    <a href="${uri}" class="hBlock--cover"> ${cover}</a>
+                                </div>
+                            </article>`;
                 },
             },
         })

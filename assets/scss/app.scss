@@ -1,10 +1,11 @@
+@import "base/mixins";
 @import "base/var";
 @import "base/grap";
 @import "base/normalize";
 @import "base/basic";
 @import "base/layout";
+@import "base/keyframes";
 
-@import "components/header";
 @import "components/zoom";
 @import "components/comment";
 @import "components/footer";
@@ -13,10 +14,15 @@
 @import "components/navigation";
 @import "components/author";
 @import "components/audio";
+@import "components/relatedPost";
+@import "components/widget";
 
 @import "templates/map";
 @import "templates/term";
 @import "templates/links";
 @import "templates/article";
-@import "templates/page";
+@import "templates/search";
 @import "templates/archive";
+
+@import "utilities/wp";
+@import "components/header";

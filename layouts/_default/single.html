@@ -1,14 +1,14 @@
 {{ define "main" }}
 <div class="articleContainer">
-    <div class="article" data-id="{{ .File.UniqueID}}">
-        <header class="article--header">
-            <h2 class="article--headline">{{ .Title }}</h2>
+    <div class="hArticle" data-id="{{ .File.UniqueID}}">
+        <header class="hArticle--header">
+            <h2 class="hArticle--headline">{{ .Title }}</h2>
             {{ if .Params.description }}
-            <div class="article--subline">
+            <div class="hArticle--subline">
                 {{ .Params.description }}
             </div>
             {{end}}
-            <div class="article--meta">
+            <div class="hArticle--meta">
                 <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{
                     .Date.Format "2006-01-02 15:04:01" }}</time>
                 {{ if .Params.categories }}
@@ -21,6 +21,8 @@
                 <span class="sep"></span>
                 <span class="article--views"></span>
                 {{ end }}
+                <span class="sep"></span>
+                {{ printf "%d 分钟阅读" .ReadingTime }}
             </div>
         </header>
         {{ if .IsTranslated }}
@@ -39,16 +41,16 @@
         {{- $TOCEnabled := or .Params.toc (and .Site.Params.toc (ne .Params.toc false)) -}}
         {{- $hasTOC := gt (len .TableOfContents) 32 -}}
         {{ if and $TOCEnabled $hasTOC -}}
-        <details class="toc" open>
+        <details class="hArticle--toc" open>
             <summary class="toc-title">{{ i18n "article.tableOfContents" }}</summary>
             {{ .TableOfContents }}
         </details>
         {{- end }}
-        <div class="article--body grap">
+        <div class="hArticle--content hGraph">
             {{ .Content }}
         </div>
         {{ if .Site.Params.post_like }}
-        <div class="post--single__action">
+        <div class="hArticle--action">
             <button class="button--like like-btn" aria-label="like the post">
                 <svg class="icon--active" viewBox="0 0 1024 1024" width="32" height="32">
                     <path
@@ -64,7 +66,7 @@
             </button>
         </div>
         {{ end }}
-        <div class="article--tags u-paddingTop20">
+        <div class="hArticle--tags">
             {{ range (.GetTerms "tags") }}
             <a href="{{ .RelPermalink }}" class="artile--tag"><span>#</span>{{ .LinkTitle }}</a>
             {{ end }}

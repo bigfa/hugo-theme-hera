@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="post--list">
-    <div class="block--list">
+    <div class="hBlock--list">
         {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
         {{ $paginator := .Paginate ($pages) }}
         {{ range $paginator.Pages }}

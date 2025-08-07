@@ -10,9 +10,9 @@ interface farallonActionsOptions {
 }
 
 class farallonActions extends farallonHelper {
-    singleSelector: string = ".article";
+    singleSelector: string = ".hArticle";
     likeButtonSelctor: string = ".like-btn";
-    articleSelector: string = ".block--item";
+    articleSelector: string = ".hArticle--item";
     viewSelector: string = ".article--views";
     actionDomain: string;
     text: string = "";

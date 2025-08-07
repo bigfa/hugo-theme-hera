@@ -1,4 +1,4 @@
-<article class="block--item block--item__status" itemtype="http://schema.org/Article" itemscope="itemscope"
+<article class="hBlock--item hBlock--item__status" itemtype="http://schema.org/Article" itemscope="itemscope"
     data-id="{{ .File.UniqueID}}">
     <div class="status--icon">
         <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -7,12 +7,12 @@
             </path>
         </svg>
     </div>
-    <div class="block--addon">
-        <div class="meta">
-            <div class="block--snippet" itemprop="about">
+    <div class="hBlock--addon">
+        <div class="hBlock--content">
+            <div class="hBlock--snippet" itemprop="about">
                 {{ .Summary | plainify | truncate 120 }}
             </div>
-            <div class="block--meta">
+            <div class="hBlock--meta">
                 <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{ .Date
                     | time.Format
                     ":date_long"
@@ -28,11 +28,11 @@
                 <span class="article--views"></span>
                 {{ end }}
                 <a datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="status--link" href="{{ .Permalink }}"
-                    itemprop="datePublished"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"
-                        viewBox="0 0 12 12" data-settings-arrow="true">
-                        <path fill="#757575"
-                            d="M.646 10.646a.5.5 0 0 0 .708.708zM11 1h.5a.5.5 0 0 0-.5-.5zm-.5 7a.5.5 0 0 0 1 0zM4 .5a.5.5 0 0 0 0 1zM1.354 11.354l10-10-.708-.708-10 10zM10.5 1v7h1V1zM4 1.5h7v-1H4z">
-                        </path>
+                    itemprop="datePublished"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M4.385 12c0 .55.2 1.02.59 1.41.39.4.86.59 1.41.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.02.2-1.41.59-.4.39-.59.86-.59 1.41m5.62 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.42.59s1.02-.2 1.41-.59c.4-.39.59-.86.59-1.41s-.2-1.02-.59-1.41a1.93 1.93 0 0 0-1.41-.59c-.55 0-1.03.2-1.42.59s-.58.86-.58 1.41m5.6 0c0 .55.2 1.02.58 1.41.4.4.87.59 1.43.59s1.03-.2 1.42-.59.58-.86.58-1.41-.2-1.02-.58-1.41a1.93 1.93 0 0 0-1.42-.59c-.56 0-1.04.2-1.43.59s-.58.86-.58 1.41"
+                            clip-rule="evenodd"></path>
                     </svg></a>
             </div>
         </div>
