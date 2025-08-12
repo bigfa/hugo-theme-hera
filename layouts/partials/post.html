@@ -7,25 +7,25 @@
     <div class="hBlock--addon">
         <div class="hBlock--content">
             <div class="hBlock--snippet">
-                <div class="summary">{{ .Summary | plainify | truncate 80 }}</div>
-                <div class="hBlock--meta"><time datetime='{{.Date.Format "2006-01-02 15:04:01" }}'
-                        class="humane--time">{{ .Date
-                        | time.Format
-                        ":date_long"
-                        }}</time>
-                    {{ if .Params.categories }}
-                    <span class="sep"></span>
-                    {{ range (.GetTerms "categories") }}
-                    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-                    {{ end }}
-                    {{ end }}
-                    {{ if .Site.Params.post_view }}
-                    <span class="sep"></span>
-                    <span class="article--views"></span>
-                    {{ end }}
-                    <span class="sep"></span>
-                    {{ printf "%d 分钟阅读" .ReadingTime }}
-                </div>
+                {{ .Summary | plainify | truncate 80 }}
+            </div>
+            <div class="hBlock--meta"><time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{
+                    .Date
+                    | time.Format
+                    ":date_long"
+                    }}</time>
+                {{ if .Params.categories }}
+                <span class="sep"></span>
+                {{ range (.GetTerms "categories") }}
+                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                {{ end }}
+                {{ end }}
+                {{ if .Site.Params.post_view }}
+                <span class="sep"></span>
+                <span class="article--views"></span>
+                {{ end }}
+                <span class="sep"></span>
+                {{ printf "%d 分钟阅读" .ReadingTime }}
             </div>
         </div>
         {{ if .Content }}

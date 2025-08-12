@@ -38,15 +38,15 @@
             </ul>
         </div>
         {{ end }}
-        {{- $TOCEnabled := or .Params.toc (and .Site.Params.toc (ne .Params.toc false)) -}}
-        {{- $hasTOC := gt (len .TableOfContents) 32 -}}
-        {{ if and $TOCEnabled $hasTOC -}}
-        <details class="hArticle--toc" open>
-            <summary class="toc-title">{{ i18n "article.tableOfContents" }}</summary>
-            {{ .TableOfContents }}
-        </details>
-        {{- end }}
         <div class="hArticle--content hGraph">
+            {{- $TOCEnabled := or .Params.toc (and .Site.Params.toc (ne .Params.toc false)) -}}
+            {{- $hasTOC := gt (len .TableOfContents) 32 -}}
+            {{ if and $TOCEnabled $hasTOC -}}
+            <details class="hArticle--toc" open>
+                <summary class="toc-title">{{ i18n "article.tableOfContents" }}</summary>
+                {{ .TableOfContents }}
+            </details>
+            {{- end }}
             {{ .Content }}
         </div>
         {{ if .Site.Params.post_like }}

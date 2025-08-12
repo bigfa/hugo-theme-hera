@@ -7,22 +7,26 @@
         padding: 25px 0;
         position: relative;
 
+        @media screen and (max-width: 768px) {
+            padding: 12px 0;
+        }
+
         &__status {
             background-color: var(--hera-background-gray-lightest);
             border-radius: 10px;
             padding: 20px;
             margin-top: 15px;
             margin-bottom: 15px;
+
+            @media screen and (max-width: 768px) {
+                padding: 12px;
+            }
         }
 
         &__text {
             .hBlock--title {
                 margin-bottom: 5px;
             }
-        }
-
-        @media screen and (max-width: 768px) {
-            padding: 12px 0;
         }
     }
 
@@ -132,5 +136,18 @@
         border-radius: 5px;
         width: 100%;
         object-fit: cover;
+    }
+}
+
+.sticky--post {
+    display: flex;
+    align-items: center;
+    color: var(--hera-text-gray-lightest);
+    font-size: 13px;
+    user-select: none;
+    margin-bottom: 3px;
+
+    svg {
+        margin-right: 8px;
     }
 }

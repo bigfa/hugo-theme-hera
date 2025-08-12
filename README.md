@@ -12,6 +12,10 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.2.1
+
+-   style improvement
+
 ### 0.2.0
 
 -   refactoring scss files
