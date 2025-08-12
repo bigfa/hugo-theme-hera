@@ -17,10 +17,10 @@
             {{ if .Content }}
             {{ $urls := findRE "<img src=\"[^\"|\\\"]*\"" .Content }} {{ if $urls }} {{ $url :=index ($urls) 0 }} {{
                 $url :=(strings.TrimPrefix "<img src=\"" $url) }}
-  {{ $url := strings.TrimRight " \"" $url }} <a href="{{ .Permalink }}" class="hCard--image"><img src="{{ $url }}"
-                class="cover" /></a>
+  {{ $url := strings.TrimRight " \"" $url }} <a href="{{ .Permalink }}" class="hCard--coverLink"><img src="{{ $url }}"
+                class="hCard--cover" /></a>
             {{ else }}
-            <a href="{{ .Permalink }}" class="hCard--image"><img src="{{ .Site.Params.defaultCover }}"
+            <a href="{{ .Permalink }}" class="hCard--coverLink"><img src="{{ .Site.Params.defaultCover }}"
                     class="cover" /></a>
             {{ end }}
             {{ end }}
@@ -30,11 +30,10 @@
                         {{ .Title }}
                     </a>
                 </h2>
-                <div class="hCard--description">{{ .Summary | plainify | truncate 60 }}</div>
+                <div class="hCard--snippet">{{ .Summary | plainify | truncate 60 }}</div>
                 <div class="hCard--meta">
-                    <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{ .Date | time.Format
-                        ":date_long"
-                        }}</time>
+                    <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}'>{{ .Date.Format
+                        "2006-01-02" }}</time>
                     <span class="sep"></span>
                     {{ printf "%d 分钟阅读" .ReadingTime }}
                 </div>

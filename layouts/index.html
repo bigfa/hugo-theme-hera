@@ -12,7 +12,7 @@
         {{ end }}
     </div>
 </div>
-<nav class="navigation ">
+<nav class="navigation">
     <div class="nav-links">
         {{ range $paginator.Pagers }}
         <a class="page-numbers{{ if eq . $paginator }} current{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>

@@ -9,8 +9,7 @@
             </div>
             {{end}}
             <div class="hArticle--meta">
-                <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{
-                    .Date.Format "2006-01-02 15:04:01" }}</time>
+                <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}'>{{ .Date.Format "2006-01-02" }}</time>
                 {{ if .Params.categories }}
                 <span class="sep"></span>
                 {{ range (.GetTerms "categories") }}

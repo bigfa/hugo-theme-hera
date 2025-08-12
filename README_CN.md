@@ -2,8 +2,6 @@
 
 ![](https://static.fatesinger.com/2024/12/2u80bhyxkmru4o9j.png)
 
-优雅主题
-
 ## 使用方法
 
 ```
@@ -13,6 +11,10 @@ echo "theme = 'hera'" >> hugo.toml
 ```
 
 ## 更新日志
+
+### 0.2.1
+
+-   样式改进
 
 ### 0.2.1
 

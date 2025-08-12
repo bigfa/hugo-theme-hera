@@ -19,10 +19,7 @@
                 <a href="{{ .RelPermalink }}" aria-label="{{ .Title }}">{{ .Title }} </a>
             </div>
             <div class="hRelated--meta">
-                <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}' class="humane--time">{{ .Date
-                    | time.Format
-                    ":date_long"
-                    }}</time>
+                <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}'>{{ .Date.Format "2006-01-02" }}</time>
             </div>
         </div>
         {{ end }}

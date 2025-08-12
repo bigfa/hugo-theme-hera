@@ -4,7 +4,7 @@
     }
 
     &--item {
-        &.depth-1 {
+        &.parent {
             border-bottom: 1px solid var(--hera-border-color-light);
 
             &:last-child {
@@ -213,7 +213,7 @@
         }
     }
 
-    .depth-1 > & {
+    .parent > & {
         margin-left: 50px;
 
         @media screen and (max-width: 768px) {
