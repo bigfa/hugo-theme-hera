@@ -13,7 +13,11 @@
     {{- $paginator := .Paginate $pages }}
     <div class="block--list">
         {{- range $index, $page := $paginator.Pages }}
+        {{ if eq .Type "memo" }}
+        {{ partial "memo.html" . }}
+        {{ else }}
         {{ partial "post.html" . }}
+        {{ end }}
         {{ end }}
     </div>
     <nav class="navigation ">

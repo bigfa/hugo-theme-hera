@@ -2,8 +2,8 @@
 
 <div class="articleContainer">
     <div class="page--archive">
-        {{ range .Pages.ByPublishDate.Reverse.GroupByDate "2006" }}
-        {{ if (where .Pages "Section" "post") }}
+        {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+        {{ range $pages.ByPublishDate.Reverse.GroupByDate "2006" }}
         <h2 class="archive--title__year">{{ .Key }}</h2>
         {{ range .Pages.ByPublishDate.Reverse.GroupByDate "January" }}
         <h3 class="archive--title__month">{{ .Key }}</h3>
@@ -23,7 +23,6 @@
             </li>
             {{ end }}
         </ul>
-        {{ end }}
         {{ end }}
         {{ end }}
     </div>
