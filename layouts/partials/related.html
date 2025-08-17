@@ -6,12 +6,17 @@
         {{ range . }}
         <div class="hRelated--item">
             <a class="hRelated--image" href="{{ .RelPermalink }}" aria-label="{{ .Title }}">
-                {{ if .Content }}
+                {{ if .Params.cover }}
+                {{ with .Resources.Get .Params.cover }}
+                {{ with .Fill "808x404 Center" }}
+                <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="cover">
+                {{ end }}
+                {{ end }}
+                {{ else if .Content }}
                 {{ $urls := findRE "<img src=\"[^\"|\\\"]*\"" .Content }} {{ if $urls }} {{ $url :=index ($urls) 0 }} {{
                     $url :=(strings.TrimPrefix "<img src=\"" $url) }}
-    {{ $url := strings.TrimRight " \"" $url }} <img src="{{ $url }}" class="cover" alt="{{ .Title }}" />
-                {{ else }}
-                <img src="{{ .Site.Params.defaultCover }}" class="cover" alt="{{ .Title }}" />
+        {{ $url := strings.TrimRight " \"" $url }}<img src="{{ $url }}" class="cover" itemprop="image"
+                    alt="{{ .Title }}" />
                 {{ end }}
                 {{ end }}
             </a>

@@ -20,6 +20,12 @@
             font-weight: 900;
             margin-top: 30px;
         }
+
+        &__month {
+            font-size: 18px;
+            color: var(--hera-text-gray);
+            margin-top: 10px;
+        }
     }
 
     &--meta {

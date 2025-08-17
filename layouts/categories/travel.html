@@ -12,14 +12,19 @@
         {{- $paginator := .Paginate .Data.Pages }}
         {{ range $paginator.Pages }} <article class="hCard--item" data-id="{{ .File.UniqueID}}"
             itemtype="http://schema.org/Article" itemscope="itemscope">
-            {{ if .Content }}
+            {{ if .Params.cover }}
+            {{ with .Resources.Get .Params.cover }}
+            {{ with .Fill "808x484 Center" }}
+            <a href="{{ .Permalink }}" aria-label="{{ .Title }}" class="hCard--coverLink"><img src="{{ .RelPermalink }}"
+                    alt="{{ .Title }}" class="hCard--cover"></a>
+            {{ end }}
+            {{ end }}
+            {{ else if .Content }}
             {{ $urls := findRE "<img src=\"[^\"|\\\"]*\"" .Content }} {{ if $urls }} {{ $url :=index ($urls) 0 }} {{
                 $url :=(strings.TrimPrefix "<img src=\"" $url) }}
-  {{ $url := strings.TrimRight " \"" $url }} <a href="{{ .Permalink }}" class="hCard--coverLink"
-                title="{{ .Title }}"><img src="{{ $url }}" class="hCard--cover" alt="{{ .Title }}" /></a>
-            {{ else }}
-            <a href="{{ .Permalink }}" class="hCard--coverLink" title="{{ .Title }}"><img
-                    src="{{ .Site.Params.defaultCover }}" class="cover" alt="{{ .Title }}" /></a>
+        {{ $url := strings.TrimRight " \"" $url }} <a href="{{ .Permalink }}" aria-label="{{ .Title }}"
+                class="hCard--coverLink"><img src="{{ $url }}" class="hCard--cover" itemprop="image"
+                alt="{{ .Title }}" /></a>
             {{ end }}
             {{ end }}
             <div class="hCard--content">

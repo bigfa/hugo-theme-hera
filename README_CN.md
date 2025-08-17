@@ -12,6 +12,15 @@ echo "theme = 'hera'" >> hugo.toml
 
 ## 更新日志
 
+### 0.2.4
+
+-   样式改进
+-   更新翻译
+-   本地图片裁切支持
+
+> [!NOTE]
+> 如果你想自定义 logo，把 `logo.jpg` 放在`assets/images/` 文件夹下
+
 ### 0.2.3
 
 -   样式改进

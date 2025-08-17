@@ -12,6 +12,15 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.2.4
+
+-   style improvement
+-   update translation
+-   local image resize support
+
+> [!NOTE]
+> if you want to custom your logo,put `logo.jpg` under your`assets/images/` folder
+
 ### 0.2.3
 
 -   style improvement

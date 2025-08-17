@@ -25,11 +25,20 @@
                 {{ T "article.readingTime" .ReadingTime }}
             </div>
         </div>
-        {{ if .Content }}
+        {{ if .Params.cover }}
+        {{ with .Resources.Get .Params.cover }}
+        {{ with .Fill "192x192 Center" }}
+        <a href="{{ .Permalink }}" aria-label="{{ .Title }}" class="hBlock--cover"><img src="{{ .RelPermalink }}"
+                alt="{{ .Title }}" class="hBlock--coverImage"></a>
+        {{ end }}
+        {{ end }}
+        {{ else if .Content }}
         {{ $urls := findRE "<img src=\"[^\"|\\\"]*\"" .Content }} {{ if $urls }} {{ $url :=index ($urls) 0 }} {{ $url
             :=(strings.TrimPrefix "<img src=\"" $url) }}
-    {{ $url := strings.TrimRight " \"" $url }} <a href="{{ .Permalink }}" class="hBlock--cover"
-            title="{{ .Title }}"><img src="{{ $url }}" class="hBlock--coverImage" alt="{{ .Title }}" /></a> {{
-        end }} {{ end }}
+        {{ $url := strings.TrimRight " \"" $url }} <a href="{{ .Permalink }}" aria-label="{{ .Title }}"
+            class="hBlock--cover"><img src="{{ $url }}" class="hBlock--coverImage" itemprop="image"
+            alt="{{ .Title }}" /></a>
+        {{ end }}
+        {{ end }}
     </div>
 </article>
