@@ -39,9 +39,11 @@
             <div class="js-contentFixed">
                 <div class="site--info">
                     {{ with resources.Get "images/logo.jpg" }}
+                    {{ with .Fill "176x176 Center" }}
                     <a href="{{ site.Home.Permalink }}" class="avatar--wrapper" title="{{ $.Site.Title }}">
                         <img src="{{ .RelPermalink }}" class="avatar" alt="{{ $.Site.Title }}" />
                     </a>
+                    {{ end }}
                     {{ end }}
                     <div class="site--info__content">
                         <h1 class="site--title">{{ $.Site.Title }}</h1>
@@ -64,10 +66,10 @@
                                 d="M4.092 11.06a6.95 6.95 0 1 1 13.9 0 6.95 6.95 0 0 1-13.9 0m6.95-8.05a8.05 8.05 0 1 0 5.13 14.26l3.75 3.75a.56.56 0 1 0 .79-.79l-3.73-3.73A8.05 8.05 0 0 0 11.042 3z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <input type="search" class="search-field" placeholder="Search …" value="" name="s"
-                            id="searchbox" autocomplete="off">
+                        <input type="search" class="search-field" placeholder='{{ i18n "search.placeholder" }}' value=""
+                            name="s" id="searchbox" autocomplete="off">
                     </label>
-                    <input type="submit" class="search-submit" value="Search">
+                    <input type="submit" class="search-submit" value='{{ i18n "search.submit" }}'>
                 </form>
             </div>
             {{ end }}

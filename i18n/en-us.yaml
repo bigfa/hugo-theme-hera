@@ -47,3 +47,10 @@ article:
 
     next:
         other: "Next"
+
+search:
+    placeholder:
+        other: "Input and type enter"
+
+    submit:
+        other: "Submit"

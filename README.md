@@ -12,6 +12,11 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.2.5
+
+-   add page single template
+-   update translation
+
 ### 0.2.4
 
 -   style improvement
