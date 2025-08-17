@@ -8,7 +8,7 @@
         {{ range .Pages.ByPublishDate.Reverse.GroupByDate "January" }}
         <h3 class="archive--title__month">{{ .Key }}</h3>
         <ul class="archive--list">
-            {{ range ((where .Pages "Section" "post")) }}
+            {{ range (.Pages ) }}
             <li class="archive--item">
                 <div class="archive--title">
                     <a href="{{ .RelPermalink }}">
@@ -16,7 +16,7 @@
                     </a>
                 </div>
                 <div class="archive--meta">
-                    {{ .PublishDate.Format "Jan 02" }}
+                    {{ partial "time.html" . }}
                     <span class="sep"></span>
                     {{ printf "%d 分钟阅读" .ReadingTime }}
                 </div>

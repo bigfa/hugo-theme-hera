@@ -38,10 +38,11 @@
             </div>
             <div class="js-contentFixed">
                 <div class="site--info">
-                    <a href="{{ site.Home.Permalink }}" class="avatar--wrapper">{{ $logo := resources.Get
-                        "images/avatar.jpeg" }}
-                        <img src="{{ $logo.RelPermalink }}" class="avatar" />
+                    {{ with resources.Get "images/logo.jpg" }}
+                    <a href="{{ site.Home.Permalink }}" class="avatar--wrapper" title="{{ $.Site.Title }}">
+                        <img src="{{ .RelPermalink }}" class="avatar" alt="{{ $.Site.Title }}" />
                     </a>
+                    {{ end }}
                     <div class="site--info__content">
                         <h1 class="site--title">{{ $.Site.Title }}</h1>
                         <div class="site--description">{{ .Site.Params.SiteDescription }}</div>

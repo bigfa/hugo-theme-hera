@@ -9,10 +9,9 @@
             {{ end }}
         </div>
     </header>
-    {{- $pages := union .RegularPages .Sections }}
-    {{- $paginator := .Paginate $pages }}
     <div class="block--list">
-        {{- range $index, $page := $paginator.Pages }}
+        {{- $paginator := .Paginate .Data.Pages }}
+        {{ range $paginator.Pages }}
         {{ if eq .Type "memo" }}
         {{ partial "memo.html" . }}
         {{ else }}
@@ -22,9 +21,7 @@
     </div>
     <nav class="navigation ">
         <div class="nav-links">
-            {{ range $paginator.Pagers }}
-            <a class="page-numbers{{ if eq . $paginator }} current{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
-            {{ end }}
+            {{ partial "pagination.html" . }}
         </div>
     </nav>
 </div>

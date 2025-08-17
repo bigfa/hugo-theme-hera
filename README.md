@@ -12,6 +12,11 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.2.3
+
+-   style improvement
+-   fixed pagination error
+
 ### 0.2.2
 
 -   style improvement

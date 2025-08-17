@@ -11,15 +11,14 @@
             {{end}}
         </header>
         <div class="template--linksWrap">
-            <ul class="link-items">
+            <div class="link-items">
                 {{ range .Params.links }}
-                <li class="link-item">
-                    <a class="link-item-inner effect-apollo" href="{{ .link }}" title="Just a blog" target="_blank">
-                        <span class="sitename"><strong>{{ .title }}</strong>{{ .description }}</span>
-                    </a>
-                </li>
+                <a class="link-item" href="{{ .link }}" title="{{ .title }}" target="_blank">
+                    <span class="sitename">{{ .description }}</span>
+                    <strong>{{ .title }}</strong>
+                </a>
                 {{ end }}
-            </ul>
+            </div>
         </div>
         <div class="grap u-marginBottom30">
             {{ .Content }}

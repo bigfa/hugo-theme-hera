@@ -1,6 +1,6 @@
 <article class="hBlock--item" data-id="{{ .File.UniqueID}}" itemtype="http://schema.org/Article" itemscope="itemscope">
     <h2 class="hBlock--title">
-        <a href="{{ .Permalink }}">
+        <a href="{{ .Permalink }}" title="{{ .Title }}">
             {{ .Title }}
         </a>
     </h2>
@@ -10,11 +10,11 @@
                 {{ .Summary | plainify | truncate 80 }}
             </div>
             <div class="hBlock--meta">
-                <time datetime='{{.Date.Format "2006-01-02 15:04:01" }}'>{{ .Date.Format "2006-01-02" }}</time>
+                {{ partial "time.html" . }}
                 {{ if .Params.categories }}
                 <span class="sep"></span>
                 {{ range (.GetTerms "categories") }}
-                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                <a href="{{ .RelPermalink }}" title="{{ .LinkTitle }}">{{ .LinkTitle }}</a>
                 {{ end }}
                 {{ end }}
                 {{ if .Site.Params.post_view }}
@@ -22,14 +22,14 @@
                 <span class="article--views"></span>
                 {{ end }}
                 <span class="sep"></span>
-                {{ printf "%d 分钟阅读" .ReadingTime }}
+                {{ T "article.readingTime" .ReadingTime }}
             </div>
         </div>
         {{ if .Content }}
         {{ $urls := findRE "<img src=\"[^\"|\\\"]*\"" .Content }} {{ if $urls }} {{ $url :=index ($urls) 0 }} {{ $url
             :=(strings.TrimPrefix "<img src=\"" $url) }}
-    {{ $url := strings.TrimRight " \"" $url }} <a href="{{ .Permalink }}" class="hBlock--cover"><img src="{{ $url }}"
-            class="hBlock--coverImage" /></a> {{
+    {{ $url := strings.TrimRight " \"" $url }} <a href="{{ .Permalink }}" class="hBlock--cover"
+            title="{{ .Title }}"><img src="{{ $url }}" class="hBlock--coverImage" alt="{{ .Title }}" /></a> {{
         end }} {{ end }}
     </div>
 </article>

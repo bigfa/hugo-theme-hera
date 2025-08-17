@@ -8,20 +8,18 @@
             {{ end }}
         </div>
     </header>
-    {{- $pages := union .RegularPages .Sections }}
-    {{- $paginator := .Paginate $pages }}
     <div class="hCard--list">
-        {{- range $index, $page := $paginator.Pages }}
-        <article class="hCard--item" data-id="{{ .File.UniqueID}}" itemtype="http://schema.org/Article"
-            itemscope="itemscope">
+        {{- $paginator := .Paginate .Data.Pages }}
+        {{ range $paginator.Pages }} <article class="hCard--item" data-id="{{ .File.UniqueID}}"
+            itemtype="http://schema.org/Article" itemscope="itemscope">
             {{ if .Content }}
             {{ $urls := findRE "<img src=\"[^\"|\\\"]*\"" .Content }} {{ if $urls }} {{ $url :=index ($urls) 0 }} {{
                 $url :=(strings.TrimPrefix "<img src=\"" $url) }}
-  {{ $url := strings.TrimRight " \"" $url }} <a href="{{ .Permalink }}" class="hCard--coverLink"><img src="{{ $url }}"
-                class="hCard--cover" /></a>
+  {{ $url := strings.TrimRight " \"" $url }} <a href="{{ .Permalink }}" class="hCard--coverLink"
+                title="{{ .Title }}"><img src="{{ $url }}" class="hCard--cover" alt="{{ .Title }}" /></a>
             {{ else }}
-            <a href="{{ .Permalink }}" class="hCard--coverLink"><img src="{{ .Site.Params.defaultCover }}"
-                    class="cover" /></a>
+            <a href="{{ .Permalink }}" class="hCard--coverLink" title="{{ .Title }}"><img
+                    src="{{ .Site.Params.defaultCover }}" class="cover" alt="{{ .Title }}" /></a>
             {{ end }}
             {{ end }}
             <div class="hCard--content">
@@ -43,9 +41,7 @@
     </div>
     <nav class="navigation">
         <div class="nav-links">
-            {{ range $paginator.Pagers }}
-            <a class="page-numbers{{ if eq . $paginator }} current{{ end }}" href="{{ .URL }}">{{ .PageNumber }}</a>
-            {{ end }}
+            {{ partial "pagination.html" . }}
         </div>
     </nav>
 </div>
