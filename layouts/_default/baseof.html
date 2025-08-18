@@ -46,7 +46,11 @@
                     {{ end }}
                     {{ end }}
                     <div class="site--info__content">
-                        <h1 class="site--title">{{ $.Site.Title }}</h1>
+                        <h1 class="site--title">
+                            <a href="{{ site.Home.Permalink }}" title="{{ $.Site.Title }}">
+                                {{ $.Site.Title }}
+                            </a>
+                        </h1>
                         <div class="site--description">{{ .Site.Params.SiteDescription }}</div>
                     </div>
                 </div>

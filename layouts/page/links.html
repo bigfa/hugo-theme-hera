@@ -14,8 +14,8 @@
             <div class="link-items">
                 {{ range .Params.links }}
                 <a class="link-item" href="{{ .link }}" title="{{ .title }}" target="_blank">
-                    <span class="sitename">{{ .description }}</span>
                     <strong>{{ .title }}</strong>
+                    <span class="sitename">{{ .description }}</span>
                 </a>
                 {{ end }}
             </div>

@@ -12,6 +12,18 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.2.6
+
+-   add custom pagination
+-   style improvement
+-   add link shortcode
+
+```
+{{<link "garden-pavilion">}}
+```
+
+`garden-pavilion` is your markdown file name
+
 ### 0.2.5
 
 -   add page single template

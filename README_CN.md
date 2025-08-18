@@ -12,6 +12,18 @@ echo "theme = 'hera'" >> hugo.toml
 
 ## 更新日志
 
+### 0.2.6
+
+-   增加自定义分页
+-   样式改进
+-   添加链接短代码
+
+```
+{{<link "garden-pavilion">}}
+```
+
+`garden-pavilion` 是 markdown 文件名
+
 ### 0.2.5
 
 -   增加页面模版
