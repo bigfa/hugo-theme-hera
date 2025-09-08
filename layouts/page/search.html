@@ -1,8 +1,5 @@
 {{ define "main" }}
 <div class="post--list">
-    <header class="hSearch--header">
-        <div id="searchbox"></div>
-    </header>
     <div id="hits" class="hBlock--list"></div>
     <div id="pagination"></div>
 </div>
@@ -28,17 +25,19 @@
             const date = time.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
             const uri = hit.uri.replace("/" + lngString + "/", "/");
             const cover = hit.cover
-                ? `<a href="${hit.url}" class="hBlock--coverLink"><img src="${hit.cover}" class="hBlock--image" itemprop="image" /></a>`
+                ? `<a href="${hit.url}" class="hBlock--cover"><img src="${hit.cover}" class="hBlock--coverImage" itemprop="image" /></a>`
                 : '';
             return `<article class="hBlock--item" itemtype="http://schema.org/Article" itemscope="itemscope">
-                        <div class="hBlock--content">
-                            <h2 class="hBlock--title" itemprop="headline">
+                <h2 class="hBlock--title" itemprop="headline">
                                 <a href="${hit.url}">${instantsearch.highlight({ attribute: 'title', hit })}</a>
                             </h2>
-                            <div class="hBlock--snippet" itemprop="about">${hit.description || ''}</div>
-                            <div class="hBlock--meta">${date}</div>
-                        </div>
+                            <div class="hBlock--addon">
+                                <div class="hBlock--content">
+                                    <div class="hBlock--snippet" itemprop="about">${hit.description || ''}</div>
+                                    <div class="hBlock--meta">${date}</div>
+                                </div>
                             ${cover}
+                            </div>
                     </article>`;
         }).join('')) || '<div class="hBlock--empty">Make sure all words are spelled correctly.</div>';
     };
@@ -84,13 +83,13 @@
     const renderSearchBox = (renderOptions, isFirstRender) => {
         const { query, refine, widgetParams } = renderOptions;
         if (isFirstRender) {
-            widgetParams.container.innerHTML = `
-                <form class="hSearch--form" role="search" novalidate>
-                    <input type="search" id="search-input" class="hSearch--input" placeholder="输入内容后按回车搜索" autocomplete="off" />
-                    <button type="submit" class="hSearch--submit">搜索</button>
-                </form>`;
-            const form = widgetParams.container.querySelector('.hSearch--form');
-            const input = widgetParams.container.querySelector('#search-input');
+            // widgetParams.container.innerHTML = `
+            //     <form class="hSearch--form" role="search" novalidate>
+            //         <input type="search" id="search-input" class="hSearch--input" placeholder="输入内容后按回车搜索" autocomplete="off" />
+            //         <button type="submit" class="hSearch--submit">搜索</button>
+            //     </form>`;
+            const form = document.querySelector('.search-form');
+            const input = document.querySelector('#search-input');
             form.addEventListener('submit', e => { e.preventDefault(); refine(input.value); });
             // 仅在按回车时执行搜索（不实时）
             input.addEventListener('keydown', e => {
@@ -100,7 +99,7 @@
                 }
             });
         }
-        const input = widgetParams.container.querySelector('#search-input');
+        const input = document.querySelector('#search-input');
         if (input && input.value !== query) input.value = query;
     };
     const customSearchBox = instantsearch.connectors.connectSearchBox(renderSearchBox);
