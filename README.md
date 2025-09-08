@@ -12,6 +12,10 @@ echo "theme = 'hera'" >> config.toml
 
 ## Release Note
 
+### 0.2.7
+
+-   local search assets
+
 ### 0.2.6
 
 -   add custom pagination
